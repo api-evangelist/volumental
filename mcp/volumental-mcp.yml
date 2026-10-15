@@ -1,0 +1,95 @@
+generated: '2026-10-15'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/volumental-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.volumental.com, volumental.com, developer.volumental.com, jobs.volumental.com;
+  verdict gated (https://developer.volumental.com/mcp answered 401: the edge authenticates before it routes, which proves nothing either way).
+  Candidate tools below are derived from the 16 operation(s) in the provider''s own OpenAPI (16 listed); they describe what a server WOULD expose,
+  not one that exists.'
+tools:
+- name: post_api_v1_recommendations
+  operationId: post_api_v1_recommendations
+  method: POST
+  path: /api/v1/recommendations
+  description: Get Recommendations
+- name: get_api_v1_scans_web
+  operationId: get_api_v1_scans_web
+  method: GET
+  path: /api/v1/scans/web
+  description: List Scans
+- name: get_api_v1_some_endpoint
+  operationId: get_api_v1_some_endpoint
+  method: GET
+  path: /api/v1/some-endpoint
+  description: GET /api/v1/some-endpoint
+- name: post_oauth_token
+  operationId: post_oauth_token
+  method: POST
+  path: /oauth/token
+  description: POST /oauth/token
+- name: get_v1_tenant_name_scans
+  operationId: get_v1_tenantName_scans
+  method: GET
+  path: /v1/{tenantName}/scans
+  description: Get scan measurements
+- name: get_v1_tenant_name_scans_scan_id_measurements
+  operationId: get_v1_tenantName_scans_scan_id_measurements
+  method: GET
+  path: /v1/{tenantName}/scans/scan_id/measurements
+  description: Get scan measurements
+- name: post_v1_auth
+  operationId: post_v1_auth
+  method: POST
+  path: /v1/auth
+  description: POST /v1/auth
+- name: get_v1_tenantname
+  operationId: get_v1_tenantname
+  method: GET
+  path: /v1/{tenantname}
+  description: GET /v1/{tenantName}
+- name: get_v1alpha_tenant_name_scanners
+  operationId: get_v1alpha_tenantName_scanners
+  method: GET
+  path: /v1alpha/{tenantName}/scanners
+  description: Get scan measurements
+- name: get_v1alpha_tenantname
+  operationId: get_v1alpha_tenantname
+  method: GET
+  path: /v1alpha/{tenantname}
+  description: GET /v1alpha/{tenantName}
+- name: get_v1beta_tenantname
+  operationId: get_v1beta_tenantname
+  method: GET
+  path: /v1beta/{tenantname}
+  description: GET /v1beta/{tenantName}
+- name: patch_v1beta_tenantname
+  operationId: patch_v1beta_tenantname
+  method: PATCH
+  path: /v1beta/{tenantname}
+  description: PATCH /v1beta/{tenantName}
+- name: put_v1beta_tenantname
+  operationId: put_v1beta_tenantname
+  method: PUT
+  path: /v1beta/{tenantname}
+  description: PUT /v1beta/{tenantName}
+- name: get_v1beta_tenantname_inventory
+  operationId: get_v1beta_tenantname_inventory
+  method: GET
+  path: /v1beta/{tenantname}/inventory
+  description: GET /v1beta/{tenantName}/inventory
+- name: patch_v1beta_tenantname_inventory
+  operationId: patch_v1beta_tenantname_inventory
+  method: PATCH
+  path: /v1beta/{tenantname}/inventory
+  description: PATCH /v1beta/{tenantName}/inventory
+- name: put_v1beta_tenantname_inventory
+  operationId: put_v1beta_tenantname_inventory
+  method: PUT
+  path: /v1beta/{tenantname}/inventory
+  description: PUT /v1beta/{tenantName}/inventory

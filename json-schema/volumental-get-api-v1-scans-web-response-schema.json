@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/volumental/main/json-schema/volumental-get-api-v1-scans-web-response-schema.json",
+  "title": "GetApiV1ScansWebResponse",
+  "x-generated": "2026-10-15",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetApiV1ScansWebResponse",
+  "type": "object",
+  "properties": {
+    "200": {
+      "type": "string",
+      "description": "Scans were found. The response will contain an array of scan objects sorted by created_at descending. If no scans were found, an empty list will be returned."
+    },
+    "400": {
+      "type": "string",
+      "description": "The request was malformed."
+    },
+    "401": {
+      "type": "string",
+      "description": "Authentication credentials were missing or invalid."
+    },
+    "500": {
+      "type": "string",
+      "description": "An unexpected error occurred on the server."
+    }
+  }
+}

@@ -1,23 +1,121 @@
 aid: volumental
+
 name: Volumental
-description: 'Volumental is a company surfaced via the API Evangelist harvest backlog (source: stockholm-trip)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://volumental.com/hubfs/Volumental_1554%20copy.jpg
+
+description: Volumental provides 3D foot scanning and shoe fitting technology for retailers, enabling fast and accurate size recommendations both
+  in‑store and online. Founded in 2012 by PhD researchers and a former NASA rocket scientist, the company leverages a large dataset of foot scans
+  to power AI‑driven fit engines, omnichannel tools, and analytics that improve conversion and reduce returns. Their solutions integrate with
+  Shopify, other e‑commerce platforms, and offer SDKs for mobile scanning, serving thousands of stores worldwide.
+
 url: https://raw.githubusercontent.com/api-evangelist/volumental/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:stockholm-trip
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-15 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-15'
+
 modified: '2026-10-15'
+
 tags:
 - Company
-apis: []
+- Retail
+- Footwear
+- 3DScanning
+- AI
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/volumental-rules.yml
+- type: JSONLD
+  url: json-ld/volumental-context.jsonld
+- type: Vocabulary
+  url: vocabulary/volumental-vocabulary.yml
+- type: DataModel
+  url: data-model/volumental-data-model.yml
+- type: Authentication
+  url: authentication/volumental-authentication.yml
+- type: Conformance
+  url: conformance/volumental-conformance.yml
+- type: LLMsTxt
+  url: llms/volumental-llms.txt
+- type: WellKnown
+  url: well-known/volumental-well-known.yml
+- type: Hosts
+  url: hosts/volumental-hosts.yml
+- type: Vendors
+  url: vendors/volumental-vendors.yml
+- type: Newsroom
+  url: https://volumental.com/press
+- type: APIReference
+  url: https://developer.volumental.com/reference
+- type: GettingStarted
+  url: https://developer.volumental.com/docs/getting-started-recommendations
+- type: Documentation
+  url: https://developer.volumental.com/
+- type: GitHubOrganization
+  url: https://github.com/Volumental
+- type: DomainSecurity
+  url: security/volumental-domain-security.yml
 - type: Website
   url: https://volumental.com/
+- type: Blog
+  url: https://volumental.com/blog
+- type: Support
+  url: https://volumental.com/contact
+- type: PrivacyPolicy
+  url: https://volumental.com/policy/privacy-policy
+- type: TermsOfService
+  url: https://volumental.com/policy/terms-of-service
+
+apis:
+- aid: volumental:volumental-api
+  name: Volumental API
+  description: 'Volumental API as documented publicly: 16 operations. Contract generated from the documentation by API Evangelist (2026-10-15);
+    not the provider''s own document.'
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/volumental-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI, AsyncAPI, GraphQL, or other machine-readable contract was found despite accessible developer documentation.
+  evidence:
+  - url: https://developer.volumental.com/reference
+    status: 200
+  checked: '2026-10-15'
+x-enrichment:
+  date: '2026-10-15'
+  status: enriched
+  artifacts_added: 22
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

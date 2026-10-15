@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/volumental/main/json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json",
+  "title": "PatchV1BetaTenantnameInventoryResponse",
+  "x-generated": "2026-10-15",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PatchV1BetaTenantnameInventoryResponse",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "pos_id": {
+      "type": "string"
+    },
+    "on_hand": {
+      "type": "integer"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

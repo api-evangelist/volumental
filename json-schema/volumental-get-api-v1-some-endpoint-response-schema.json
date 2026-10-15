@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/volumental/main/json-schema/volumental-get-api-v1-some-endpoint-response-schema.json",
+  "title": "GetApiV1SomeEndpointResponse",
+  "x-generated": "2026-10-15",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetApiV1SomeEndpointResponse",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "scans": {
+      "type": "object",
+      "properties": {
+        "left_length": {
+          "type": "number"
+        },
+        "left_width": {
+          "type": "number"
+        },
+        "left_instep_height": {
+          "type": "number"
+        },
+        "right_length": {
+          "type": "number"
+        },
+        "right_width": {
+          "type": "number"
+        },
+        "right_instep_height": {
+          "type": "number"
+        }
+      }
+    },
+    "meshes": {
+      "type": "object",
+      "properties": {
+        "left_foot": {
+          "type": "string"
+        },
+        "right_foot": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

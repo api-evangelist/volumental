@@ -1,0 +1,11 @@
+generated: '2026-10-15'
+method: probed
+source: https://volumental.com/policy/privacy-policy
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://volumental.com/policy/privacy-policy
+        http_status: 200
+        fetched: "true"
+        quote: "If you input your email, we will send you a unique link to your 3D scan and measurements!"
+        note: Allows users to request access to their personal data via email link.

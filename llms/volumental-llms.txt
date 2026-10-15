@@ -1,0 +1,77 @@
+# Volumental Documentation
+
+> Documentation for Volumental
+
+## Guides: Data Integration
+- [Integrating Volumental Recommendations](https://developer.volumental.com/docs/integrating-volumental-recommendations.md)
+- [Product Catalog](https://developer.volumental.com/docs/product-catalog.md): The Volumental Fit Engine needs information on each shoe style at a high level, such as product images, style name, brand, and gender. The product catalog can be sent to Volumental through our API or…
+  - [Catalog upload to FTP](https://developer.volumental.com/docs/catalog-upload-to-ftp.md): To learn more about the product catalog Volumental needs, [please start here](https://developer.volumental.com/docs/product-catalog)
+- [Inventory](https://developer.volumental.com/docs/inventory.md): The Volumental Fit Engine can avoid recommending shoes that do not exist in the store. It needs to integrate with the retailer's inventory systems to make this happen. Since each scanner is assigned…
+  - [Inventory integration using the API](https://developer.volumental.com/docs/inventory-integration.md)
+  - [Inventory upload using the FTP](https://developer.volumental.com/docs/inventory-upload-to-ftp.md)
+- [Purchase history](https://developer.volumental.com/docs/purchase-history.md): As previously mentioned, the Volumental Fit Engine operates by learning which kind of foot shapes prefer specific shoe styles and sizes. In practice, this is achieved by linking scans to purchases…
+  - [Transaction upload to the FTP](https://developer.volumental.com/docs/transaction-upload-ftp.md)
+
+## Guides: Volumental Online Recommendations
+- [Getting started with Online Recommendations](https://developer.volumental.com/docs/getting-started-recommendations.md)
+- [Before integrating](https://developer.volumental.com/docs/product-feed.md)
+- [Add the widget button to your product pages](https://developer.volumental.com/docs/add-the-volumental-widget-to-your-product-pages.md)
+- [Returns integration](https://developer.volumental.com/docs/returns-integration.md)
+  - [Incoming webhooks](https://developer.volumental.com/docs/incoming-webhooks-1.md)
+- [Order capture with Shopify](https://developer.volumental.com/docs/registering-orders.md)
+
+## Guides: Volumental Online Measurements
+- [Getting started with Online Measurements](https://developer.volumental.com/docs/getting-started-with-measurements-service.md)
+- [Add scan id to order in Shopify](https://developer.volumental.com/docs/add-scan-id-to-order-in-shopify.md): Documentation for customers using the volumental-measurement button
+
+## Guides: Online API
+- [SDK Events](https://developer.volumental.com/docs/events.md)
+- [Online Scan API](https://developer.volumental.com/docs/online-scan-api.md)
+
+## API Reference: Volumental API
+- Authentication
+  - [Check Authentication](https://developer.volumental.com/reference/welcome-1.md): Verifies whether the authentication is successful
+  - [Authenticate](https://developer.volumental.com/reference/auth.md): Authentication to Volumental API is performed using a bearer token. The bearer token is available in the response in the access_token field and used in the "Authorization" header as <i>"Bearer…
+- Inventory
+  - [List Inventory](https://developer.volumental.com/reference/inventory-search-1.md): Searches the inventory for the supplied tenant name and POS ID. Filter the returned list by specifying a product ID. If no filter is specified, all items are returned.
+  - [Replace Inventory](https://developer.volumental.com/reference/inventory-replace-1.md): Replaces all existing items in inventory. The process starts by removing all existing items from the inventory (from the stores in the update) then adds all items sent in the request. The replacement…
+  - [Update Inventory](https://developer.volumental.com/reference/inventory-update-1.md): Updates the items in the request, or creates them if they do not exist. All other existing items are left untouched. Please note that each request can contain a maximum of 50,000 items.
+- Products
+  - [List Products](https://developer.volumental.com/reference/products-search-1.md): Fetches all the products for the supplied tenant name. The response size can be limited by using the limit parameter. When using the limit parameter, the server will paginate the response by dividing…
+  - [Update Products](https://developer.volumental.com/reference/products-update-1.md): Updates the products with the provided product IDs, or creates them if they do not exist. All other existing products are left untouched. Please note that each request can contain a maximum of 500…
+  - [Get Product](https://developer.volumental.com/reference/products-details-1.md): Retrieves a product object by using the supplied product ID. The language code must be a valid ISO 639-1 language code.
+  - [Update Product](https://developer.volumental.com/reference/products-update-product-1.md): Updates a product object with the supplied product ID, or creates it, if it does not exist. The language code must be a valid ISO 639-1 language code.
+- Profile
+  - [Get User Profile](https://developer.volumental.com/reference/profile-3.md): Retrieves a user profile from an email address.
+- Organization
+  - [Create Store/Organization](https://developer.volumental.com/reference/organization-create-1.md): Creates an organization or a store. The organizations are organized in a tree structure and the stores are the leaves in the organization tree. Please note that only stores can have attached POS IDs…
+  - [Update Store/Organization by organization ID](https://developer.volumental.com/reference/organization-update-1.md): Updates the organization/store by using the supplied ID. Please note that <b>Name</b> and <b>Parent_id</b> can’t be updated in the same request.
+  - [List Scanners for a tenant](https://developer.volumental.com/reference/get_v1-tenant-scanners.md): Retrieves a list of scanners. For each scanner in the response, the name of the store currently owning it is specified.
+  - [List Scanners for an organization ID](https://developer.volumental.com/reference/get_v1-tenant-scanners-org-id.md): Retrieves the list of scanners owned by the supplied organization ID.  For each scanner in the response, the name of the store currently owning it is specified.
+  - [List Stores for a tenant](https://developer.volumental.com/reference/get_v1-tenant-stores.md): Retrieves the list of organizations and stores for a supplied tenant. Filter the response by specifying an organization name or a POS ID.
+  - [Get Store/Organization by organization ID](https://developer.volumental.com/reference/get_v1-tenant-stores-org-id.md): Retrieves the organization/store object using the supplied ID.
+- Scan Data
+  - [List Scans for a scanner and time span](https://developer.volumental.com/reference/scan-list-1.md): Returns information about all the successful scans done by a scanner during a period. The date should be expressed in UTC.
+  - [List Scans for a partner ID](https://developer.volumental.com/reference/scan-meta-partner-1.md): Returns information about all the successful scans for the supplied partner ID.
+  - [Get Metadata for a scan](https://developer.volumental.com/reference/scan-meta-1.md): Returns the metadata (i.e. email and name of the scanned person, time, etc..) attached to the supplied scan ID. <code>has_recommendations</code> reports whether footwear recommendations were…
+  - [Get Measurements for a scan](https://developer.volumental.com/reference/scan-measurements-1.md): Returns the scan measurements for the supplied scan ID.
+  - [Get Mesh for a scan](https://developer.volumental.com/reference/scan-mesh-1.md): Returns the mesh object for a scan. Depending on the mesh object requested, the endpoint will respond with a different <i>Content-Type</i> header. For example, the header for meshes…
+  - [Check Mesh](https://developer.volumental.com/reference/scan-mesh-head-1.md): Checks if a mesh object exists. The endpoint will return 404 if the requested object is not yet available, 200 OK with no message body otherwise.
+  - [Get Scene for a scan](https://developer.volumental.com/reference/scan-scene-1.md): Returns the world from foot and world from ground matrices for the supplied scan ID. The `world_from_*` keys contains matrices stored in _row major_ order. It will transform points in the source…
+  - [Get Sizes for a scan](https://developer.volumental.com/reference/scan-external-link-1.md): Returns, for the supplied scan ID, all the possible sizes for a supplied size specifier. If parts of the size specifier are not provided as a query parameter, the endpoint will fall back to what was…
+  - [Get Metadata for a tenant and time span](https://developer.volumental.com/reference/scan-bulk-1.md): NOTE: Is guaranteed to return all scans made more than 24 hours ago, but may not return all scans made less than 24 hours ago. Max time span is 1 month.
+  - [List Scans for an email address](https://developer.volumental.com/reference/scan-list-email-1.md): Returns information about all the successful scans for the supplied email address.
+- Pressure Data
+  - [Get Pressure Data for a scan](https://developer.volumental.com/reference/pressure-meta-1.md): Retrieves pressure data for a scan.
+  - [List Pressure Data files for a scan](https://developer.volumental.com/reference/pressure-list-files-1.md): Retrieves the list of pressure files for a scan.
+  - [Get a Pressure Data file for a scan](https://developer.volumental.com/reference/pressure-files-1.md): Returns the blob, the raw data, belonging to the pressure file specified as parameter.
+  - [Get Headers](https://developer.volumental.com/reference/pressure-files-head-1.md): Gets the header for a pressure data file. This endpoint can be used to check if the filename exists.
+- Fit Tags
+  - [List Fit Tags](https://developer.volumental.com/reference/get_v1-tenant-shoes-fittags-download-1.md): Returns a list of all available fit tags.
+- Transactions
+  - [Add Transaction](https://developer.volumental.com/reference/transactions-create-1.md): Creates a purchase transaction. The endpoint will return an ID that can be used as parameter to the GET transaction endpoint to fetch previously saved data.
+  - [Get Transaction](https://developer.volumental.com/reference/transaction-get-1.md): Retrieves a transaction object by using the provided transaction ID.
+
+## Recipes
+- [Get scan measurements](https://developer.volumental.com/recipes/get-scan-measurements.md)
+- [Get User Data](https://developer.volumental.com/recipes/get-user-data.md)

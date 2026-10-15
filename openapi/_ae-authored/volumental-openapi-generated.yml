@@ -1,0 +1,598 @@
+openapi: 3.1.0
+info:
+  title: Volumental API
+  version: '2026-10-15'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-15: 16 operation(s) read from 7 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Volumental has published no machine-readable contract that the
+    pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 11
+    documentation: 5
+    pages-with-code: 6
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-15'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.volumental.com/docs/online-scan-api.md
+  - https://developer.volumental.com/docs/inventory-integration.md
+  - https://developer.volumental.com/recipes/get-user-data.md
+  - https://developer.volumental.com/recipes/get-scan-measurements.md
+  - https://developer.volumental.com/docs/inventory-integration
+  - https://developer.volumental.com/docs/accessing-myvolumentalcom-with-emails-or-on-your-e-commerce
+  - https://developer.volumental.com/docs/online-scan-api
+servers:
+- url: https://api.volumental.com
+paths:
+  /api/v1/recommendations:
+    post:
+      operationId: post_api_v1_recommendations
+      tags:
+      - Api
+      summary: Get Recommendations
+      x-source: https://developer.volumental.com/docs/online-scan-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiV1RecommendationsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostApiV1RecommendationsResponse'
+      x-evidence:
+        kind: documentation
+  /api/v1/scans/web:
+    get:
+      operationId: get_api_v1_scans_web
+      tags:
+      - Api
+      summary: List Scans
+      x-source: https://developer.volumental.com/docs/online-scan-api.md
+      parameters:
+      - name: email_hash
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The hashed email connected to the scan.
+      - name: subject
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Optional identifier provided on the pdp when initiating the widget.
+      - name: per_page
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The number of results to return per page. Maximum value is 100.
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The page number of the results to fetch.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV1ScansWebResponse'
+      x-evidence:
+        kind: documentation
+  /api/v1/some-endpoint:
+    get:
+      operationId: get_api_v1_some_endpoint
+      tags:
+      - Api
+      summary: GET /api/v1/some-endpoint
+      x-source: https://developer.volumental.com/docs/online-scan-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV1SomeEndpointResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://widget.volumental.com/api/v1/some-endpoint  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+          ```'
+  /oauth/token:
+    post:
+      operationId: post_oauth_token
+      tags:
+      - Oauth
+      summary: POST /oauth/token
+      x-source: https://developer.volumental.com/docs/online-scan-api.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostOauthTokenResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST https://login.volumental.com/oauth/token  -H "Content-Type: application/x-www-form-urlencoded"  -d "grant_type=client_credentials"  -d
+          "client_id=YOUR_CLIENT_ID"  -d "client_secret=YOUR_CLIENT_SECRET"  -d "audience=https://stage-gateway.volumental.com"
+
+          ```'
+  /v1/{tenantName}/scans:
+    get:
+      operationId: get_v1_tenantName_scans
+      tags:
+      - Scans
+      summary: Get scan measurements
+      x-source: https://developer.volumental.com/recipes/get-scan-measurements.md
+      parameters:
+      - name: tenantName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: scanner
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: start
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: end
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v1/{tenantName}/scans/scan_id/measurements:
+    get:
+      operationId: get_v1_tenantName_scans_scan_id_measurements
+      tags:
+      - Scans
+      summary: Get scan measurements
+      x-source: https://developer.volumental.com/recipes/get-scan-measurements.md
+      parameters:
+      - name: tenantName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v1/auth:
+    post:
+      operationId: post_v1_auth
+      tags:
+      - Auth
+      summary: POST /v1/auth
+      x-source: https://developer.volumental.com/recipes/get-user-data.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1AuthResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.volumental.com/v1/auth  --header 'Accept: application/json'  --header 'Content-Type:\
+          \ application/json'  --data '\n      {\n           \"client_id\": \"<<client_id>>\",\n           \"client_secret\": \"<<client_secret>>\"\
+          \n      }\n      '"
+  /v1/{tenantname}:
+    get:
+      operationId: get_v1_tenantname
+      tags:
+      - Api
+      summary: GET /v1/{tenantName}
+      x-source: https://developer.volumental.com/recipes/get-user-data.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1TenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url ''https://api.volumental.com/v1/<<tenant_name>>/scans?scanner=vandra-0&start=2019-01-01T00%3A00%3A00&end=2019-01-02T00%3A00%3A00''  --header
+          ''Accept: application/json''  --header ''Authorization: Bearer <<apiKey>>'''
+  /v1alpha/{tenantName}/scanners:
+    get:
+      operationId: get_v1alpha_tenantName_scanners
+      tags:
+      - V1Alpha
+      summary: Get scan measurements
+      x-source: https://developer.volumental.com/recipes/get-scan-measurements.md
+      parameters:
+      - name: tenantName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /v1alpha/{tenantname}:
+    get:
+      operationId: get_v1alpha_tenantname
+      tags:
+      - V1Alpha
+      summary: GET /v1alpha/{tenantName}
+      x-source: https://developer.volumental.com/recipes/get-scan-measurements.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url https://api.volumental.com/v1alpha/<<tenant_name>>/scanners  --header ''Accept: application/json''  --header
+          ''Authorization: Bearer <<apiKey>>'''
+  /v1beta/{tenantname}:
+    get:
+      operationId: get_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: GET /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url https://api.volumental.com/v1beta/<<tenant_name>>/inventory  --header ''Accept: application/json''  --header
+          ''Authorization: Bearer <access_token>''
+
+          ```'
+    patch:
+      operationId: patch_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: PATCH /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PATCH  --url https://api.volumental.com/v1beta/<<tenant_name>>/inventory  --header 'Accept: application/json'\
+          \  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n     {\n          \"on_hand\"\
+          : 1,\n          \"pos_id\": \"1\",\n          \"product_id\": \"10002\"\n     },\n     {\n          \"on_hand\": 0,\n          \"pos_id\"\
+          : \"2\",\n          \"product_"
+    put:
+      operationId: put_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: PUT /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT  --url 'https://api.volumental.com/v1beta/<<tenant_name>>/inventory'  --header 'Accept: application/json'\
+          \  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n     {\n          \"on_hand\"\
+          : 5,\n          \"pos_id\": \"1\",\n          \"product_id\": \"10001\"\n     },\n     {\n          \"on_hand\": 3,\n          \"pos_id\"\
+          : \"1\",\n          \"product_"
+  /v1beta/{tenantname}/inventory:
+    get:
+      operationId: get_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: GET /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.volumental.com/v1beta/TENANT_NAME/inventory  --header 'Accept: application/json'  --header\
+          \ 'Authorization: Bearer <access_token>' \n The response looks something like this: \n [\n {\n \"product_id\": \"10001\",\n \"pos_id\"\
+          : \"1\",\n \"on_hand\": 5,\n \"updated_at\": \"2022-03-22T23:04:00.563113Z\"\n },\n {\n \"product_id\": \"10002\",\n \"pos_id\": \"\
+          1\",\n \"on_hand\": 3,\n \"updated_at\": \"2022-"
+    patch:
+      operationId: patch_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: PATCH /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PATCH  --url https://api.volumental.com/v1beta/TENANT_NAME/inventory  --header 'Accept: application/json'  --header\
+          \ 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n {\n \"on_hand\": 1,\n \"pos_id\"\
+          : \"1\",\n \"product_id\": \"10002\"\n },\n {\n \"on_hand\": 0,\n \"pos_id\": \"2\",\n \"product_id\": \"10002\"\n }\n]\n' \n Make a\
+          \ GET request to see the current state of t"
+    put:
+      operationId: put_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: PUT /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT  --url 'https://api.volumental.com/v1beta/TENANT_NAME/inventory'  --header 'Accept: application/json'  --header\
+          \ 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n {\n \"on_hand\": 5,\n \"pos_id\"\
+          : \"1\",\n \"product_id\": \"10001\"\n },\n {\n \"on_hand\": 3,\n \"pos_id\": \"1\",\n \"product_id\": \"10002\"\n },\n {\n \"on_hand\"\
+          : 5,\n \"pos_id\": \"2\",\n \"product_id\": \"100"
+components:
+  schemas:
+    PostApiV1RecommendationsRequest:
+      type: object
+      properties:
+        scan_id:
+          type: string
+          description: The scan ID for which you want to get recommendations.
+      required:
+      - scan_id
+    PostApiV1RecommendationsResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Recommendations were successfully retrieved. The response will contain recommendation data.
+        '404':
+          type: string
+          description: The scan was not found.
+        '401':
+          type: string
+          description: Authentication credentials were missing or invalid.
+    GetApiV1ScansWebResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Scans were found. The response will contain an array of scan objects sorted by created_at descending. If no scans were
+            found, an empty list will be returned.
+        '400':
+          type: string
+          description: The request was malformed.
+        '401':
+          type: string
+          description: Authentication credentials were missing or invalid.
+        '500':
+          type: string
+          description: An unexpected error occurred on the server.
+    GetApiV1SomeEndpointResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        scans:
+          type: object
+          properties:
+            left_length:
+              type: number
+            left_width:
+              type: number
+            left_instep_height:
+              type: number
+            right_length:
+              type: number
+            right_width:
+              type: number
+            right_instep_height:
+              type: number
+        meshes:
+          type: object
+          properties:
+            left_foot:
+              type: string
+            right_foot:
+              type: string
+    PostOauthTokenResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+        expires_in:
+          type: integer
+    PostV1AuthResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+    GetV1TenantnameResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+    GetV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PatchV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PutV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    GetV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PatchV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PutV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Auth
+- name: Oauth
+- name: Scans
+- name: V1Alpha
+- name: V1Beta

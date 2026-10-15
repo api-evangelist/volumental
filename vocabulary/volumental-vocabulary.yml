@@ -1,0 +1,75 @@
+generated: '2026-10-15'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/volumental-openapi-generated.yml
+vocabulary:
+  name: Volumental Domain Vocabulary
+  description: 'Terms declared by Volumental''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-15'
+  terms:
+  - term: PostApiV1RecommendationsRequest
+    definition: 'Object declared by the contract with fields: scan_id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PostApiV1RecommendationsRequest
+  - term: PostApiV1RecommendationsResponse
+    definition: 'Object declared by the contract with fields: 200, 404, 401.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PostApiV1RecommendationsResponse
+  - term: GetApiV1ScansWebResponse
+    definition: 'Object declared by the contract with fields: 200, 400, 401, 500.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetApiV1ScansWebResponse
+  - term: GetApiV1SomeEndpointResponse
+    definition: 'Object declared by the contract with fields: id, created_at, scans, meshes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetApiV1SomeEndpointResponse
+  - term: PostOauthTokenResponse
+    definition: 'Object declared by the contract with fields: access_token, token_type, expires_in.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PostOauthTokenResponse
+  - term: PostV1AuthResponse
+    definition: 'Object declared by the contract with fields: success.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PostV1AuthResponse
+  - term: GetV1TenantnameResponse
+    definition: 'Object declared by the contract with fields: success.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetV1TenantnameResponse
+  - term: GetV1BetaTenantnameResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetV1BetaTenantnameResponse
+  - term: PatchV1BetaTenantnameResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PatchV1BetaTenantnameResponse
+  - term: PutV1BetaTenantnameResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PutV1BetaTenantnameResponse
+  - term: GetV1BetaTenantnameInventoryResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/GetV1BetaTenantnameInventoryResponse
+  - term: PatchV1BetaTenantnameInventoryResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PatchV1BetaTenantnameInventoryResponse
+  - term: PutV1BetaTenantnameInventoryResponse
+    definition: 'Object declared by the contract with fields: product_id, pos_id, on_hand, updated_at.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/volumental-openapi-generated.yml#/components/schemas/PutV1BetaTenantnameInventoryResponse

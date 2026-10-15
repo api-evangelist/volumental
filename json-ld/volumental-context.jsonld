@@ -1,0 +1,79 @@
+{
+  "@context": {
+    "@vocab": "https://volumental.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "volumental": "https://volumental.com/schema#",
+    "PostApiV1RecommendationsRequest": "volumental:PostApiV1RecommendationsRequest",
+    "scan_id": {
+      "@id": "volumental:scan_id",
+      "@type": "xsd:string"
+    },
+    "PostApiV1RecommendationsResponse": "volumental:PostApiV1RecommendationsResponse",
+    "GetApiV1ScansWebResponse": "volumental:GetApiV1ScansWebResponse",
+    "GetApiV1SomeEndpointResponse": "volumental:GetApiV1SomeEndpointResponse",
+    "id": {
+      "@id": "volumental:id",
+      "@type": "xsd:string"
+    },
+    "created_at": {
+      "@id": "volumental:created_at",
+      "@type": "xsd:dateTime"
+    },
+    "scans": {
+      "@id": "volumental:scans"
+    },
+    "meshes": {
+      "@id": "volumental:meshes"
+    },
+    "PostOauthTokenResponse": "volumental:PostOauthTokenResponse",
+    "access_token": {
+      "@id": "volumental:access_token",
+      "@type": "xsd:string"
+    },
+    "token_type": {
+      "@id": "volumental:token_type",
+      "@type": "xsd:string"
+    },
+    "expires_in": {
+      "@id": "volumental:expires_in",
+      "@type": "xsd:integer"
+    },
+    "PostV1AuthResponse": "volumental:PostV1AuthResponse",
+    "success": {
+      "@id": "volumental:success",
+      "@type": "xsd:boolean"
+    },
+    "GetV1TenantnameResponse": "volumental:GetV1TenantnameResponse",
+    "GetV1BetaTenantnameResponse": "volumental:GetV1BetaTenantnameResponse",
+    "product_id": {
+      "@id": "volumental:product_id",
+      "@type": "xsd:string"
+    },
+    "pos_id": {
+      "@id": "volumental:pos_id",
+      "@type": "xsd:string"
+    },
+    "on_hand": {
+      "@id": "volumental:on_hand",
+      "@type": "xsd:integer"
+    },
+    "updated_at": {
+      "@id": "volumental:updated_at",
+      "@type": "xsd:dateTime"
+    },
+    "PatchV1BetaTenantnameResponse": "volumental:PatchV1BetaTenantnameResponse",
+    "PutV1BetaTenantnameResponse": "volumental:PutV1BetaTenantnameResponse",
+    "GetV1BetaTenantnameInventoryResponse": "volumental:GetV1BetaTenantnameInventoryResponse",
+    "PatchV1BetaTenantnameInventoryResponse": "volumental:PatchV1BetaTenantnameInventoryResponse",
+    "PutV1BetaTenantnameInventoryResponse": "volumental:PutV1BetaTenantnameInventoryResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Volumental API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Volumental's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-15) from openapi/_ae-authored/volumental-openapi-generated.yml.",
+  "dcterms:created": "2026-10-15",
+  "dcterms:source": [
+    "openapi/_ae-authored/volumental-openapi-generated.yml"
+  ]
+}

@@ -1,0 +1,19 @@
+generated: '2026-10-15'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://developer.volumental.com/reference/welcome-1.md
+sources:
+- https://developer.volumental.com/reference/welcome-1.md
+- https://developer.volumental.com/reference/auth.md
+- https://developer.volumental.com/docs/getting-started-recommendations.md
+- https://developer.volumental.com/docs/getting-started-with-measurements-service.md
+description: Authentication to Volumental API is performed using a bearer token.
+schemes:
+- type: http-bearer
+  name: bearerAuth
+  evidence: JWT Authorization header using the Bearer scheme.
+  location: header
+  header: Authorization
+  token_url: /v1/auth
+  how_to_obtain: POST to /v1/auth with JSON body containing client_id and client_secret; the response includes an access_token field.
+docs: https://developer.volumental.com/reference/welcome-1.md
