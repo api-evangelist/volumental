@@ -1,0 +1,60 @@
+openapi: 3.2.0
+info:
+  title: Volumental Auth API
+  version: '2026-10-15'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-15: 16 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Volumental has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 11
+    documentation: 5
+    pages-with-code: 6
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-15'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.volumental.com/docs/online-scan-api.md
+  - https://developer.volumental.com/docs/inventory-integration.md
+  - https://developer.volumental.com/recipes/get-user-data.md
+  - https://developer.volumental.com/recipes/get-scan-measurements.md
+  - https://developer.volumental.com/docs/inventory-integration
+  - https://developer.volumental.com/docs/accessing-myvolumentalcom-with-emails-or-on-your-e-commerce
+  - https://developer.volumental.com/docs/online-scan-api
+servers:
+- url: https://api.volumental.com
+security:
+- bearer: []
+tags:
+- name: Auth
+paths:
+  /v1/auth:
+    post:
+      operationId: post_v1_auth
+      tags:
+      - Auth
+      summary: POST /v1/auth
+      x-source: https://developer.volumental.com/recipes/get-user-data.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV1AuthResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST  --url https://api.volumental.com/v1/auth  --header 'Accept: application/json'  --header 'Content-Type: application/json'  --data '\n      {\n           \"client_id\": \"<<client_id>>\",\n           \"client_secret\": \"<<client_secret>>\"\n      }\n      '"
+components:
+  schemas:
+    PostV1AuthResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

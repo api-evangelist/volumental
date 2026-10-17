@@ -1,0 +1,251 @@
+openapi: 3.2.0
+info:
+  title: Volumental V1Beta API
+  version: '2026-10-15'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-15: 16 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Volumental has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 11
+    documentation: 5
+    pages-with-code: 6
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-15'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.volumental.com/docs/online-scan-api.md
+  - https://developer.volumental.com/docs/inventory-integration.md
+  - https://developer.volumental.com/recipes/get-user-data.md
+  - https://developer.volumental.com/recipes/get-scan-measurements.md
+  - https://developer.volumental.com/docs/inventory-integration
+  - https://developer.volumental.com/docs/accessing-myvolumentalcom-with-emails-or-on-your-e-commerce
+  - https://developer.volumental.com/docs/online-scan-api
+servers:
+- url: https://api.volumental.com
+security:
+- bearer: []
+tags:
+- name: V1Beta
+paths:
+  /v1beta/{tenantname}:
+    get:
+      operationId: get_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: GET /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl --request GET  --url https://api.volumental.com/v1beta/<<tenant_name>>/inventory  --header ''Accept: application/json''  --header ''Authorization: Bearer <access_token>''
+
+          ```'
+    patch:
+      operationId: patch_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: PATCH /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PATCH  --url https://api.volumental.com/v1beta/<<tenant_name>>/inventory  --header 'Accept: application/json'  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n     {\n          \"on_hand\": 1,\n          \"pos_id\": \"1\",\n          \"product_id\": \"10002\"\n     },\n     {\n          \"on_hand\": 0,\n          \"pos_id\": \"2\",\n          \"product_"
+    put:
+      operationId: put_v1beta_tenantname
+      tags:
+      - V1Beta
+      summary: PUT /v1beta/{tenantName}
+      x-source: https://developer.volumental.com/docs/inventory-integration.md
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1BetaTenantnameResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT  --url 'https://api.volumental.com/v1beta/<<tenant_name>>/inventory'  --header 'Accept: application/json'  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n     {\n          \"on_hand\": 5,\n          \"pos_id\": \"1\",\n          \"product_id\": \"10001\"\n     },\n     {\n          \"on_hand\": 3,\n          \"pos_id\": \"1\",\n          \"product_"
+  /v1beta/{tenantname}/inventory:
+    get:
+      operationId: get_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: GET /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET  --url https://api.volumental.com/v1beta/TENANT_NAME/inventory  --header 'Accept: application/json'  --header 'Authorization: Bearer <access_token>' \n The response looks something like this: \n [\n {\n \"product_id\": \"10001\",\n \"pos_id\": \"1\",\n \"on_hand\": 5,\n \"updated_at\": \"2022-03-22T23:04:00.563113Z\"\n },\n {\n \"product_id\": \"10002\",\n \"pos_id\": \"1\",\n \"on_hand\": 3,\n \"updated_at\": \"2022-"
+    patch:
+      operationId: patch_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: PATCH /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PATCH  --url https://api.volumental.com/v1beta/TENANT_NAME/inventory  --header 'Accept: application/json'  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n {\n \"on_hand\": 1,\n \"pos_id\": \"1\",\n \"product_id\": \"10002\"\n },\n {\n \"on_hand\": 0,\n \"pos_id\": \"2\",\n \"product_id\": \"10002\"\n }\n]\n' \n Make a GET request to see the current state of t"
+    put:
+      operationId: put_v1beta_tenantname_inventory
+      tags:
+      - V1Beta
+      summary: PUT /v1beta/{tenantName}/inventory
+      x-source: https://developer.volumental.com/docs/inventory-integration
+      parameters:
+      - name: tenantname
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutV1BetaTenantnameInventoryResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request PUT  --url 'https://api.volumental.com/v1beta/TENANT_NAME/inventory'  --header 'Accept: application/json'  --header 'Authorization: Bearer <access_token>'  --header 'Content-Type: application/json'  --data '\n[\n {\n \"on_hand\": 5,\n \"pos_id\": \"1\",\n \"product_id\": \"10001\"\n },\n {\n \"on_hand\": 3,\n \"pos_id\": \"1\",\n \"product_id\": \"10002\"\n },\n {\n \"on_hand\": 5,\n \"pos_id\": \"2\",\n \"product_id\": \"100"
+components:
+  schemas:
+    GetV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PatchV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PutV1BetaTenantnameInventoryResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PatchV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    GetV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+    PutV1BetaTenantnameResponse:
+      type: object
+      properties:
+        product_id:
+          type: string
+        pos_id:
+          type: string
+        on_hand:
+          type: integer
+        updated_at:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

@@ -1,0 +1,32 @@
+{
+  "provider": "volumental",
+  "sources": [
+    "_ae-authored/volumental-openapi-generated.yml"
+  ],
+  "outputs": [
+    "volumental-auth-api-openapi.yml",
+    "volumental-oauth-api-openapi.yml",
+    "volumental-recommendations-api-openapi.yml",
+    "volumental-scans-api-openapi.yml",
+    "volumental-some-endpoint-api-openapi.yml",
+    "volumental-v1alpha-api-openapi.yml",
+    "volumental-v1beta-api-openapi.yml",
+    "volumental-volumental-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "volumental-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "volumental-openapi-generated.yml: tagged paths POST /api/v1/recommendations -> Recommendations",
+    "volumental-openapi-generated.yml: tagged paths GET /api/v1/scans/web -> Scans",
+    "volumental-openapi-generated.yml: tagged paths GET /api/v1/some-endpoint -> Some Endpoint",
+    "volumental-openapi-generated.yml: tagged paths GET /v1/{tenantname} -> Volumental API",
+    "volumental-openapi-generated.yml: declared missing tag: Recommendations",
+    "volumental-openapi-generated.yml: declared missing tag: Some Endpoint",
+    "volumental-openapi-generated.yml: declared missing tag: Volumental API",
+    "apis.yml register: written (+8 apis, 8 total)"
+  ],
+  "skipped": []
+}

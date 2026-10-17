@@ -1,0 +1,87 @@
+openapi: 3.2.0
+info:
+  title: Volumental Some Endpoint API
+  version: '2026-10-15'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-15: 16 operation(s) read from 7 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Volumental has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 11
+    documentation: 5
+    pages-with-code: 6
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-15'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://developer.volumental.com/docs/online-scan-api.md
+  - https://developer.volumental.com/docs/inventory-integration.md
+  - https://developer.volumental.com/recipes/get-user-data.md
+  - https://developer.volumental.com/recipes/get-scan-measurements.md
+  - https://developer.volumental.com/docs/inventory-integration
+  - https://developer.volumental.com/docs/accessing-myvolumentalcom-with-emails-or-on-your-e-commerce
+  - https://developer.volumental.com/docs/online-scan-api
+servers:
+- url: https://api.volumental.com
+security:
+- bearer: []
+tags:
+- name: Some Endpoint
+paths:
+  /api/v1/some-endpoint:
+    get:
+      operationId: get_api_v1_some_endpoint
+      tags:
+      - Some Endpoint
+      summary: GET /api/v1/some-endpoint
+      x-source: https://developer.volumental.com/docs/online-scan-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiV1SomeEndpointResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://widget.volumental.com/api/v1/some-endpoint  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+
+          ```'
+components:
+  schemas:
+    GetApiV1SomeEndpointResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        scans:
+          type: object
+          properties:
+            left_length:
+              type: number
+            left_width:
+              type: number
+            left_instep_height:
+              type: number
+            right_length:
+              type: number
+            right_width:
+              type: number
+            right_instep_height:
+              type: number
+        meshes:
+          type: object
+          properties:
+            left_foot:
+              type: string
+            right_foot:
+              type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

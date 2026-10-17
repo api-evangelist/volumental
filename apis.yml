@@ -82,16 +82,16 @@ common:
   url: https://volumental.com/policy/terms-of-service
 
 apis:
-- aid: volumental:volumental-api
-  name: Volumental API
-  description: 'Volumental API as documented publicly: 16 operations. Contract generated from the documentation by API Evangelist (2026-10-15);
-    not the provider''s own document.'
+- aid: volumental:volumental-auth-api
+  name: Volumental Auth API
+  description: The Auth API from Volumental — 1 operation(s) for auth.
   humanURL: https://developer.volumental.com/docs/online-scan-api.md
   baseURL: https://api.volumental.com
+  tags:
+  - Auth
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/volumental-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/volumental-auth-api-openapi.yml
   - type: JSONSchema
     url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
   - type: JSONSchema
@@ -104,7 +104,160 @@ apis:
     url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
   - type: JSONSchema
     url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
-
+- aid: volumental:volumental-oauth-api
+  name: Volumental OAuth API
+  description: The Oauth API from Volumental — 1 operation(s) for oauth.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-oauth-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-recommendations-api
+  name: Volumental Recommendations API
+  description: The Recommendations API from Volumental — 1 operation(s) for recommendations.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - Recommendations
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-recommendations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-scans-api
+  name: Volumental Scans API
+  description: The Scans API from Volumental — 3 operation(s) for scans.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - Scans
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-scans-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-some-endpoint-api
+  name: Volumental Some Endpoint API
+  description: The Some Endpoint API from Volumental — 1 operation(s) for some endpoint.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - Some Endpoint
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-some-endpoint-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-v1alpha-api
+  name: Volumental V1Alpha API
+  description: The V1Alpha API from Volumental — 2 operation(s) for v1alpha.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - V1Alpha
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-v1alpha-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-v1beta-api
+  name: Volumental V1Beta API
+  description: The V1Beta API from Volumental — 2 operation(s) for v1beta.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - V1Beta
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-v1beta-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
+- aid: volumental:volumental-volumental-api-api
+  name: Volumental Volumental API
+  description: The Volumental API API from Volumental — 1 operation(s) for volumental api.
+  humanURL: https://developer.volumental.com/docs/online-scan-api.md
+  baseURL: https://api.volumental.com
+  tags:
+  - Volumental API
+  properties:
+  - type: OpenAPI
+    url: openapi/volumental-volumental-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-some-endpoint-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-api-v1-scans-web-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-post-api-v1-recommendations-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-inventory-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-get-v1-beta-tenantname-response-schema.json
+  - type: JSONSchema
+    url: json-schema/volumental-patch-v1-beta-tenantname-inventory-response-schema.json
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec
