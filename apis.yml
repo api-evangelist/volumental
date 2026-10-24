@@ -24,7 +24,16 @@ created: '2026-10-15'
 
 modified: '2026-10-15'
 
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-17
 tags:
+- Company
+- Retail
+- Footwear
+- 3D Scanning
+- Artificial Intelligence
+tags_raw:
 - Company
 - Retail
 - Footwear
@@ -88,6 +97,8 @@ apis:
   humanURL: https://developer.volumental.com/docs/online-scan-api.md
   baseURL: https://api.volumental.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -110,6 +121,8 @@ apis:
   humanURL: https://developer.volumental.com/docs/online-scan-api.md
   baseURL: https://api.volumental.com
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
